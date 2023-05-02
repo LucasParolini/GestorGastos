@@ -1,9 +1,11 @@
 import React from 'react'
 
-function HistoryItem() {
+function HistoryItem(props) {
+  console.log("detalle", props)
   return (
     <div>
-      Cash $300
+      <h1>{props.detalleGasto}</h1>
+      <p>{props.montoGasto}</p>
     </div>
   )
 }

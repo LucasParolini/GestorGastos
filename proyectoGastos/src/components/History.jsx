@@ -1,11 +1,17 @@
 import React from 'react'
 import HistoryItem from './HistoryItem'
 
-function History() {
+function History(props) {
+    const [detail, setDetail] = useState([])
+
+    const addDetail = props =>{
+        setDetail([...detail, {id: props.id, detalleGasto: props.detalleGasto, montoGasto: props.montoGasto}])
+    }
+
+
     return (
         <>
-            <h3>Historial de transacciones</h3>
-            <HistoryItem />
+            <HistoryItem addDetail={addDetail}/>
         </>
 
     )

@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
+
 
 function Balance() {
+
   return (
     <div>
         <h3>Your Balance</h3>
-        <h4>$mount balance</h4>
+        <h4>$$$$</h4>
     </div>
   )
 }
