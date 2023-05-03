@@ -1,11 +1,12 @@
 import React from 'react'
 
 function HistoryItem(props) {
-  console.log("detalle", props)
+
+  const signo = props.costoGasto < 0 ? "Gastaste -" : "Ganaste +"
+
   return (
     <div>
-      <h1>{props.detalleGasto}</h1>
-      <p>{props.montoGasto}</p>
+      en: {props.nombreGasto} <span>{signo} ${Math.abs(props.costoGasto)}</span>
     </div>
   )
 }
