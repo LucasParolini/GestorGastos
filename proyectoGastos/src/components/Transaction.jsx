@@ -6,7 +6,7 @@ function Transaction(props) {
   const [amount, setAmount] = useState(0);
 
   function pushArray(){
-    const newTransaction = {texto: text, costo: amount};
+    const newTransaction = {texto: text, amount: amount};
     console.log(newTransaction)  
     props.addTransaction(newTransaction);
 

@@ -13,17 +13,27 @@ function App() {
   const [expenses, setExpenses] = useState([])
 
 
-  const addTransaction = (transaction) =>{
+  const addTransaction = (transaction) => {
     setTransactions([...transactions, transaction])
+    if (transaction.amount > 0) {
+      setIncomes((prevIncomes) => [...prevIncomes, transaction.amount])
+    } else{
+      setExpenses((prevExpenses) => [...prevExpenses, Math.abs(transaction.amount)])
+    }
   }
+
+  const totalIncomes = incomes.map(Number).reduce((acc, curr) => acc + curr, 0)
+  const totalExpenses = expenses.map(Number).reduce((acc, curr) => acc + curr, 0)  
+  const totalBalance = parseFloat(totalIncomes - totalExpenses).toFixed(2);
+
 
   return (
     <>
-    <Header/>
-    <Balance/>
-    <BalanceDetail incomes={incomes} expenses={expenses}/>
-    <History transactions = {transactions}/>
-    <Transaction addTransaction={addTransaction}/>
+      <Header />
+      <Balance totalBalance={totalBalance} />
+      <BalanceDetail totalIncomes={totalIncomes} totalExpenses={totalExpenses} />
+      <History transactions={transactions} />
+      <Transaction addTransaction={addTransaction} />
     </>
   )
 }

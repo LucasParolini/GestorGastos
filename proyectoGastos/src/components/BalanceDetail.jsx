@@ -1,15 +1,16 @@
 import React from 'react'
 
-function BalanceDetail() {
+function BalanceDetail({ totalIncomes, totalExpenses }) {
+
     return (
         <>
             <div>
                 <h3>INCOME</h3>
-                <p>$2000</p>
+                <p>${totalIncomes}</p>
             </div>
             <div>
                 <h3>EXPENSE</h3>
-                <p>$1500</p>
+                <p>${totalExpenses}</p>
             </div>
         </>
     )
