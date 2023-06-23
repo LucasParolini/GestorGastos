@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { ContextApp } from '../Context'
 
+function Balance() {
 
-function Balance({totalBalance}) {
+  const {totalBalance} = useContext(ContextApp);
 
   return (
     <div>

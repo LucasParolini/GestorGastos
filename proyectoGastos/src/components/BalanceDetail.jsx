@@ -1,6 +1,10 @@
 import React from 'react'
+import { useContext } from 'react'
+import { ContextApp } from '../Context'
 
-function BalanceDetail({ totalIncomes, totalExpenses }) {
+function BalanceDetail() {
+
+    const { totalIncomes, totalExpenses } = useContext(ContextApp);
 
     return (
         <>

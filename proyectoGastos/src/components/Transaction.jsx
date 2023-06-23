@@ -1,8 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { ContextApp } from '../Context';
+
 
 //Aqui se usa props para despues llamar a la funcion addTransaction
-function Transaction(props) {
+function Transaction() {
 
+  const {addTransaction, totalBalance} = useContext(ContextApp);
   const [text, setText] = useState(""); //Estado para el texto de las transacciones
   const [amount, setAmount] = useState(0); //Estado para el monto de las transacciones
 
@@ -11,7 +14,7 @@ function Transaction(props) {
   function pushArray(){
     const newTransaction = {texto: text, amount: amount};
     console.log(newTransaction)  
-    props.addTransaction(newTransaction);
+    addTransaction(newTransaction);
 
   }
 

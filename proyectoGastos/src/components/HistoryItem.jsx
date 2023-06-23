@@ -1,14 +1,14 @@
-import React from 'react'
+import React from 'react';
 
 function HistoryItem(props) {
-
-  const signo = props.costoGasto < 0 ? "Gastaste -" : "Ganaste +"
+  const { nombreGasto, amount } = props;
+  const signo = amount < 0 ? "Gastaste -" : "Ganaste +";
 
   return (
     <div>
-      en: {props.nombreGasto} <span>{signo} ${Math.abs(props.costoGasto)}</span>
+      En: {nombreGasto} <span>{signo} ${Math.abs(amount)}</span>
     </div>
-  )
+  );
 }
 
-export default HistoryItem
+export default HistoryItem;
