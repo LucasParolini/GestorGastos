@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 
+//Aqui se usa props para despues llamar a la funcion addTransaction
 function Transaction(props) {
 
-  const [text, setText] = useState("");
-  const [amount, setAmount] = useState(0);
+  const [text, setText] = useState(""); //Estado para el texto de las transacciones
+  const [amount, setAmount] = useState(0); //Estado para el monto de las transacciones
 
+  //Funcion para agregar una transaccion
+  // Se crea la funcion pushArray que cre un objeto newTransaction y luego llama a la la funcion addTransaction para agregarlo a la lista de transacciones
   function pushArray(){
     const newTransaction = {texto: text, amount: amount};
     console.log(newTransaction)  
