@@ -16,10 +16,13 @@ function App() {
     <>
       <ProviderApp>
       <Header />
+      <div className="container">
       <Balance totalBalance={totalBalance} />
       <BalanceDetail totalIncomes={totalIncomes} totalExpenses={totalExpenses} />
       <History transactions={transactions} />
       <Transaction addTransaction={addTransaction} />
+      </div>
+
       </ProviderApp>
     </>
   )
